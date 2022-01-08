@@ -13,7 +13,7 @@ class SendMailController extends Controller
         try{
             Mail::send('isiemail', array('pesan' => $request->pesan) , function($pesan) use($request){
                 $pesan->to($request->penerima,'Verifikasi')->subject('Verifikasi Email');
-                $pesan->from(env('MAIL_USERNAME','didikprab@gmail.com'),'Verifikasi Akun email anda');
+                $pesan->from(env('MAIL_USERNAME','testmaillaravel12@gmail.com'),'KODEGIRI');
             });
         }catch (Exception $e){
             return response (['status' => false,'errors' => $e->getMessage()]);
